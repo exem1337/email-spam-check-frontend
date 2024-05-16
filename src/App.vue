@@ -44,18 +44,18 @@ watch(
   (newValue) => {
     switch (newValue) {
       case 0: {
-        router.replace({ query: null });
+        router.replace({  path: '/', query: null });
         return;
       }
       case 1: {
-        router.replace({ query: {
+        router.replace({ path: '/', query: {
           tab: 'spam'
           }
         });
         return;
       }
       case 2: {
-        router.replace({ query: {
+        router.replace({  path: '/', query: {
             tab: 'safe'
           }
         });

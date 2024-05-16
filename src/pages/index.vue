@@ -55,11 +55,12 @@
 <script lang="ts" setup>
 import { IEmailItem } from '../models/email.model';
 import { onBeforeMount, ref, watch } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 const emails = ref<Array<IEmailItem>>([]);
 const isModalOpen = ref<boolean>(false);
 const route = useRoute();
+const router = useRouter();
 
 const headers = [
   { title: 'Тема письма', key: 'title' },
@@ -70,7 +71,7 @@ const headers = [
 ]
 
 function onGoToMail(id: number): void {
-  console.log(id)
+  router.push(`/email/${id}`);
 }
 
 function onDeleteEmail(id: number): void {
